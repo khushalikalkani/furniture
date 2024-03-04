@@ -65,7 +65,7 @@ class _UpdateScreenState extends State<UpdateScreen> {
 
           ElevatedButton(onPressed: (){
             UpdateProfile(namecontroller.text);
-            Navigator.push(context, MaterialPageRoute(builder: (_) => Bottomnavigationbarscreen(selectedindex: 3)));
+            Navigator.push(context, MaterialPageRoute(builder: (_) => Bottomnavigationbarscreen( selectedindex: 3,)));
           }, child: Text("Updated"))
         ],
       ),

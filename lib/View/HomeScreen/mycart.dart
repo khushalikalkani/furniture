@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:furmiture/Common/globaltext.dart';
+import 'package:furmiture/View/HomeScreen/checkout.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'Common/appcolor.dart';
-import 'Common/appimages.dart';
-import 'Common/apptext.dart';
-import 'Common/globalbutton.dart';
+import '../../Common/appcolor.dart';
+import '../../Common/appimages.dart';
+import '../../Common/apptext.dart';
+import '../../Common/globalbutton.dart';
 
 class MyCart extends StatefulWidget {
   const MyCart({super.key});
@@ -51,7 +52,11 @@ class _MyCartState extends State<MyCart> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        leading: Icon(Icons.arrow_back_ios_new,size: 20,),
+        leading: InkWell(
+          onTap: (){
+
+          },
+            child: Icon(Icons.arrow_back_ios_new,size: 20,)),
         title: Globaltext(
           text: Apptext.mycart,
           fontweight: FontWeight.w600,
@@ -237,7 +242,9 @@ class _MyCartState extends State<MyCart> {
             GlobalButton(
               height: 56,
               width: double.infinity,
-              voidcallback: () {},
+              voidcallback: () {
+                Navigator.push(context, MaterialPageRoute(builder: (_){return CheckoutScreen();}));
+              },
               text: Apptext.mycartbutton,
               fontfamily: GoogleFonts.poppins().toString(),
               fontsize: 16,
